@@ -5,7 +5,6 @@ const btnEl = document.querySelector('button[type = "submit"]');
 const formEl = document.querySelector('.feedback-form');
 const emailEl = document.querySelector('input[name = "email"]');
 const messageEl = document.querySelector('textarea[name = "message"]');
-// obiekt z polami email i message
 
 //funkcja odczytująca i zapisująca zmiany
 function updateForm() {
@@ -14,10 +13,11 @@ function updateForm() {
   );
   emailEl.value = updateItem.email || '';
   messageEl.value = updateItem.message || '';
+  formEl.reset();
 }
 updateForm();
 
-const fillForm = () => {
+function fillForm() {
   // obiekt z polami email i message
   const data = {
     email: emailEl.value,
@@ -25,7 +25,7 @@ const fillForm = () => {
   };
   //zapisanie danych do local storage
   localStorage.setItem('feedback-form-state', JSON.stringify(data));
-};
+}
 
 //funkcja drukujaca obiekt data, usuwająca dane z local storage, czyszcząca formularz
 function clearForm(ev) {
@@ -33,7 +33,6 @@ function clearForm(ev) {
   console.log(data);
   localStorage.clear();
   //  removeItem('feedback-form-state');
-  formEl.reset();
 }
 
 formEl.addEventListener('input', throttle(fillForm, 500));
