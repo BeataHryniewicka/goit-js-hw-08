@@ -1,7 +1,7 @@
 import Player from '@vimeo/player';
 import throttle from 'lodash.throttle';
 
-const vimeoEL = document.getElementById('vimeo-player');
+const vimeoEL = document.querySelector('#vimeo-player');
 const player = new Player(vimeoEL);
 // const throttle = require('lodash.throttle');
 
