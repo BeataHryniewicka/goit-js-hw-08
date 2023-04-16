@@ -32,8 +32,9 @@ function fillForm() {
 function clearForm(ev) {
   ev.preventDefault();
   console.log(data);
-  // localStorage.clear();
-  removeItem('feedback-form-state');
+  localStorage.clear();
+  formEl.reset();
+  //removeItem('feedback-form-state');
 }
 
 formEl.addEventListener('input', throttle(fillForm, 500));
