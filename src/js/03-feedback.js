@@ -24,6 +24,7 @@ function fillForm() {
     message: messageEl.value,
   };
   //zapisanie danych do local storage
+
   localStorage.setItem('feedback-form-state', JSON.stringify(data));
 }
 
@@ -31,8 +32,8 @@ function fillForm() {
 function clearForm(ev) {
   ev.preventDefault();
   console.log(data);
-  localStorage.clear();
-  //  removeItem('feedback-form-state');
+  // localStorage.clear();
+  removeItem('feedback-form-state');
 }
 
 formEl.addEventListener('input', throttle(fillForm, 500));
