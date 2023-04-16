@@ -22,6 +22,8 @@ const newImages = galleryItems
   )
   .join(' ');
 
+galleryArray.style.listStyleType = 'none';
+
 galleryArray.insertAdjacentHTML('beforeend', newImages);
 
 console.log(galleryItems);
