@@ -13,7 +13,7 @@ function updateForm() {
   );
   emailEl.value = updateItem.email || '';
   messageEl.value = updateItem.message || '';
-  formEl.reset();
+  // formEl.reset();
 }
 updateForm();
 
